@@ -1,6 +1,6 @@
-import { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import s from '../Statistics/Statistics.module.css';
+import { Fragment } from "react";
+import PropTypes from "prop-types";
+import s from "../Statistics/Statistics.module.css";
 
 export const Statistics = ({
   // good,
@@ -15,7 +15,7 @@ export const Statistics = ({
       {total > 0 && (
         <ul className={s.statBox}>
           {statistics.map(([key, value]) => (
-            <li>
+            <li key={key}>
               {key}:{value}
             </li>
           ))}
