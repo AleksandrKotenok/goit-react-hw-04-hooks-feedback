@@ -22,7 +22,7 @@ export default function App() {
         <FeedbackOptions options={options} onLeaveFeedback={increment} />
       </Section>
       <Section title="Statistics">
-        <Statistics statistics={statistics} total={countTotalFeedbacks} positivePercentage={countInPercentage} />
+        {countTotalFeedbacks > 0 && <Statistics statistics={statistics} total={countTotalFeedbacks} positivePercentage={countInPercentage} />}
         {countTotalFeedbacks === 0 && <Notification message="There is no feedback" />}
       </Section>
     </Fragment>

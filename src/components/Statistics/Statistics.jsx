@@ -1,29 +1,19 @@
-import { Fragment } from "react";
 import PropTypes from "prop-types";
 import s from "../Statistics/Statistics.module.css";
 
-export const Statistics = ({
-  // good,
-  // neutral,
-  // bad,
-  statistics,
-  total,
-  positivePercentage,
-}) => {
+export const Statistics = ({ statistics, total, positivePercentage }) => {
   return (
-    <Fragment>
-      {total > 0 && (
-        <ul className={s.statBox}>
-          {statistics.map(([key, value]) => (
-            <li key={key}>
-              {key}:{value}
-            </li>
-          ))}
-          <li className={s.stat}>Total:{total}</li>
-          <li className={s.stat}>Positive feedback:{positivePercentage}%</li>
-        </ul>
-      )}
-    </Fragment>
+    <>
+      <ul className={s.statBox}>
+        {statistics.map(([key, value]) => (
+          <li key={key}>
+            {key}:{value}
+          </li>
+        ))}
+        <li className={s.stat}>Total:{total}</li>
+        <li className={s.stat}>Positive feedback:{positivePercentage}%</li>
+      </ul>
+    </>
   );
 };
 

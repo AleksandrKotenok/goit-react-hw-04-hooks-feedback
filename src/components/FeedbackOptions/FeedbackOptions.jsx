@@ -4,16 +4,9 @@ import s from "../FeedbackOptions/FeedbackOptions.module.css";
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <div className={s.btnBox}>
-      {options.map((item) => (
-        <button
-          className={s.button}
-          type="button"
-          key={item}
-          onClick={() => {
-            onLeaveFeedback(item);
-          }}
-        >
-          {item}
+      {options.map((option) => (
+        <button className={s.button} type="button" key={option} onClick={() => onLeaveFeedback(option)}>
+          {option}
         </button>
       ))}
     </div>
